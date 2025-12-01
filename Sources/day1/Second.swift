@@ -3,7 +3,7 @@ import utils
 public func second(isTest: Bool) throws -> String {
     var dialPointCounter = 0
     var point = 50
-    let rotations = isTest ? testData : try readInput(fileName: "input.txt", bundle: .module)
+    let rotations = try readInput(fileName: isTest ? "test" : "input", bundle: .module)
     for (index, rotation) in rotations.components(separatedBy: "\n").enumerated() {
         switch rotation.first {
         case "L":
@@ -11,7 +11,7 @@ public func second(isTest: Bool) throws -> String {
         case "R":
             try handle(rotation: rotation, point: &point, left: false, index: index, counter: &dialPointCounter)
         default:
-            throw Day1Error.wrongFirstCharacter(line: rotation, index: index)
+            throw Error.wrongFirstCharacter(line: rotation, index: index)
         }
     }
     return "\(dialPointCounter)"
@@ -19,7 +19,7 @@ public func second(isTest: Bool) throws -> String {
 
 private func handle(rotation: String, point: inout Int, left: Bool, index: Int, counter: inout Int) throws {
     guard let rotationNumber = Int(rotation.dropFirst()) else {
-        throw Day1Error.wrongNumberFormat(line: rotation, index: index)
+        throw Error.wrongNumberFormat(line: rotation, index: index)
     }
 
     if left {

@@ -6,20 +6,13 @@ import PackageDescription
 let package = Package(
     name: "aoc2025",
     products: [
-        .executable(name: "aoc2025", targets: ["aoc2025"]),
         .library(name: "day1", targets: ["day1"]),
     ],
     targets: [
-        .executableTarget(
-            name: "aoc2025",
-            dependencies: [
-                "day1",
-            ],
-        ),
         .target(
             name: "day1",
             dependencies: ["utils"],
-            resources: [.process("Resources/input.txt")],
+            resources: [.process("Resources")],
         ),
         .testTarget(
             name: "day1Tests",
