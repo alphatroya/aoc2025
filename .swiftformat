@@ -1,0 +1,5 @@
+--swiftversion 6.2
+--maxwidth 140
+--wraparguments before-first
+--wrapcollections before-first
+--enable isEmpty,markTypes,redundantProperty,blankLineAfterSwitchCase,wrapMultilineFunctionChains,environmentEntry,emptyExtensions,preferSwiftTesting,blankLinesAfterGuardStatements,privateStateVariables,unusedPrivateDeclarations,redundantMemberwiseInit,noGuardInTests,preferSwiftTesting,acronyms,noForceUnwrapInTests,redundantThrows,redundantAsync,preferFinalClasses
