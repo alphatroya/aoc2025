@@ -11,5 +11,5 @@ public func readInput(fileName _: String, bundle: Bundle) throws -> String {
         throw ReadError.fileNotFound
     }
 
-    return try String(contentsOf: fileURL)
+    return try String(contentsOf: fileURL, encoding: .utf8)
 }
