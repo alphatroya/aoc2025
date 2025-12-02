@@ -5,9 +5,6 @@ import PackageDescription
 
 let package = Package(
     name: "aoc2025",
-    products: [
-        .library(name: "day1", targets: ["day1"]),
-    ],
     targets: [
         .target(
             name: "day1",
@@ -18,6 +15,17 @@ let package = Package(
             name: "day1Tests",
             dependencies: [
                 "day1",
+            ],
+        ),
+        .target(
+            name: "day2",
+            dependencies: ["utils"],
+            resources: [.process("Resources")],
+        ),
+        .testTarget(
+            name: "day2Tests",
+            dependencies: [
+                "day2",
             ],
         ),
         .target(name: "utils"),

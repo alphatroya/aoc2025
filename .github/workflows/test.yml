@@ -9,14 +9,18 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v4
-    
+
+    - uses: amplium/git-crypt-action@master
+      with:
+        key_encoded: ${{ secrets.KEY }}
+
     - name: Setup Swift
       uses: swift-actions/setup-swift@v2
       with:
         swift-version: '6.2'
-    
+
     - name: Run tests
       run: swift test
