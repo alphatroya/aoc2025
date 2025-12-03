@@ -11,10 +11,11 @@ public func second(isTest: Bool) throws -> Int {
         guard let a = Int(components[0]), let b = Int(components[1]) else {
             throw Error.wrongComponentItem(range)
         }
-        for num in a...b {
+
+        for num in a ... b {
             let asString = "\(num)"
             let count = asString.count
-            for div in 1..<count {
+            for div in 1 ..< count {
                 guard count.isMultiple(of: div) else { continue }
 
                 if asString.allEqual(byCount: div) {
@@ -22,7 +23,6 @@ public func second(isTest: Bool) throws -> Int {
                     break
                 }
             }
-
         }
     }
     return sum
@@ -34,10 +34,10 @@ extension String {
         for stride in stride(from: 0, to: count, by: byCount) {
             let start = index(startIndex, offsetBy: stride)
             let end = index(start, offsetBy: byCount, limitedBy: endIndex) ?? endIndex
-            if let prev, prev != self[start..<end] {
+            if let prev, prev != self[start ..< end] {
                 return false
             }
-            prev = self[start..<end]
+            prev = self[start ..< end]
         }
         return true
     }

@@ -28,6 +28,17 @@ let package = Package(
                 "day2",
             ],
         ),
+        .target(
+            name: "day3",
+            dependencies: ["utils"],
+            resources: [.process("Resources")],
+        ),
+        .testTarget(
+            name: "day3Tests",
+            dependencies: [
+                "day3",
+            ],
+        ),
         .target(name: "utils"),
     ],
 )

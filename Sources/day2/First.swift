@@ -11,12 +11,14 @@ public func first(isTest: Bool) throws -> Int {
         guard let a = Int(components[0]), let b = Int(components[1]) else {
             throw Error.wrongComponentItem(range)
         }
-        for num in a...b {
+
+        for num in a ... b {
             let asString = "\(num)"
             let count = asString.count
             guard count.isMultiple(of: 2) else {
                 continue
             }
+
             if asString.prefix(count / 2) == asString.dropFirst(count / 2) {
                 sum += num
             }
@@ -24,4 +26,3 @@ public func first(isTest: Bool) throws -> Int {
     }
     return sum
 }
-
