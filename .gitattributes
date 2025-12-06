@@ -1,3 +1,2 @@
-Sources/day2/Resources/*.txt filter=git-crypt diff=git-crypt
-Sources/day3/Resources/*.txt filter=git-crypt diff=git-crypt
-Sources/day4/Resources/*.txt filter=git-crypt diff=git-crypt
+Sources/day[2-9]/Resources/*.txt filter=git-crypt diff=git-crypt
+Sources/day1[0-9]/Resources/*.txt filter=git-crypt diff=git-crypt
