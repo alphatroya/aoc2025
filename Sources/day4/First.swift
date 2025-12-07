@@ -15,13 +15,14 @@ public func first(isTest: Bool) throws -> Int {
                     x: x,
                     y: y,
                     maxX: line.count,
-                    lines: lines
+                    lines: lines,
                 ) {
-                    print(x, y)
                     sum += 1
                 }
+
             case space:
                 continue
+
             default:
                 throw DayError.invalidCharacter(x: x, y: y, char: char)
             }
@@ -35,13 +36,13 @@ private func checkNeighbours(
     x xOrigin: Int,
     y yOrigin: Int,
     maxX: Int,
-    lines: [String]
+    lines: [String],
 ) -> Bool {
     let max = 4
     let maxY = lines.count
     var count = 0
-    for x in xOrigin-1...xOrigin+1 {
-        for y in yOrigin-1...yOrigin+1 {
+    for x in xOrigin - 1 ... xOrigin + 1 {
+        for y in yOrigin - 1 ... yOrigin + 1 {
             if x == xOrigin, y == yOrigin {
                 continue
             }
@@ -49,7 +50,8 @@ private func checkNeighbours(
                x < maxX,
                y >= 0,
                y < maxY,
-               lines[y][lines[y].index(lines[y].startIndex, offsetBy: x)] == roll {
+               lines[y][lines[y].index(lines[y].startIndex, offsetBy: x)] == roll
+            {
                 count += 1
                 if count >= max {
                     return false

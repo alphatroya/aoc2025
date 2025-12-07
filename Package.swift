@@ -50,6 +50,17 @@ let package = Package(
                 "day4",
             ],
         ),
+        .target(
+            name: "day6",
+            dependencies: ["utils"],
+            resources: [.process("Resources")],
+        ),
+        .testTarget(
+            name: "day6Tests",
+            dependencies: [
+                "day6",
+            ],
+        ),
         .target(name: "utils"),
     ],
 )
