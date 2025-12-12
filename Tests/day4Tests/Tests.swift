@@ -8,4 +8,10 @@ struct Day4Tests {
         try #expect(day4.first(isTest: true) == 13)
         try #expect(day4.first(isTest: false) == 1540)
     }
+
+    @Test
+    func second() throws {
+        try #expect(day4.second(isTest: true) == 43)
+        try #expect(day4.second(isTest: false) == 8972)
+    }
 }
