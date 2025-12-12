@@ -51,6 +51,17 @@ let package = Package(
             ],
         ),
         .target(
+            name: "day5",
+            dependencies: ["utils"],
+            resources: [.process("Resources")],
+        ),
+        .testTarget(
+            name: "day5Tests",
+            dependencies: [
+                "day5",
+            ],
+        ),
+        .target(
             name: "day6",
             dependencies: ["utils"],
             resources: [.process("Resources")],

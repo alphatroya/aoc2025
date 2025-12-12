@@ -1,0 +1,1 @@
+enum DayError: Swift.Error {}
